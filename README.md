@@ -1,31 +1,25 @@
 learning-cmake
 ==============
 
-This is a simple CMake practice project which contains some different scenarios.
+This is a simple CMake practice repository containing several independent examples.
 
-* `hello_world`
+Each example has its own `CMakeLists.txt`; configure and build it from the repository root
+with CMake's `-S` and `-B` options. For example:
 
-    Demo a simplest CMake project.
+```sh
+cmake -S hello-world -B build/hello-world
+cmake --build build/hello-world
+```
 
-* `hello_world_clear`
+The build directory is kept separate from the source directory.
 
-    Separate the output files and src files.
+## Examples
 
-* `hello_world_lib`
-
-    Demo how to make a static/shared library.
-
-* `hello_world_shared`
-
-    Demo how to utilize external static/shared library.
-
-* `curl`
-	
-	Demo how to use cmake with curl.
-
-* `hello-module`
-
-	Demo how to use cmake find module.
+* `hello-world`: the simplest executable.
+* `hello-world-clear`: separates source files and demonstrates install rules.
+* `hello-world-lib`: builds static and shared versions of a library.
+* `hello-world-shared`: links an executable against a separately built library.
+* `curl`: finds and links the system libcurl library; libcurl development files must be installed.
+* `hello-module`: demonstrates finding a library with a custom CMake find module.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Akagi201/learning-cmake/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
